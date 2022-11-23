@@ -30,5 +30,6 @@ public abstract class Enemy {
     }
 
 
-
+    public void attack() {
+    }
 }
