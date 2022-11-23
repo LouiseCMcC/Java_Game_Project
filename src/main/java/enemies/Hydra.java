@@ -4,13 +4,16 @@ import behaviours.IDamageType;
 
 public class Hydra extends Enemy implements IEnemyAttack {
 
-    public Hydra(String name, int healthPoints, IDamageType weakness){
-        super(name, healthPoints, weakness);
+    public Hydra(int healthPoints, IDamageType weakness){
+        super(healthPoints, weakness);
+
     }
 
     @Override
     public void attack() {
 
     }
+
+
 }
 

@@ -4,8 +4,8 @@ import behaviours.IDamageType;
 
 public class Troll extends Enemy implements IEnemyAttack{
 
-    public Troll(String name, int healthPoints, IDamageType weakness){
-        super(name, healthPoints, weakness);
+    public Troll(int healthPoints, IDamageType weakness){
+        super(healthPoints, weakness);
     }
 
     @Override

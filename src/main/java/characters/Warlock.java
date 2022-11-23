@@ -4,6 +4,7 @@ import magics.Curse;
 import mythical_creatures.MythicalCreature;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Warlock extends Character{
     private ArrayList<Curse> curses;
@@ -21,5 +22,22 @@ public class Warlock extends Character{
 
     public void setMythicalCreature(MythicalCreature mythicalCreature) {
         this.mythicalCreature = mythicalCreature;
+    }
+
+    public void addCurse(Curse curse) {
+        this.curses.add(curse);
+    }
+
+    public ArrayList getCurses() {
+        return this.curses;
+    }
+
+    public int getBaseDamage(Curse curse) {
+        for(Curse knownCurse : this.curses){
+            if(curse == knownCurse){
+                return curse.getDamage();
+            }
+        }
+        return 0;
     }
 }

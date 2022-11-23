@@ -5,18 +5,12 @@ import behaviours.IDamageType;
 import java.util.ArrayList;
 
 public abstract class Enemy {
-    private String name;
     private int healthPoints;
-    private ArrayList<IDamageType>weakness;
+    private IDamageType weakness;
 
-    public Enemy(String name, int healthPoints, IDamageType weakness){
-        this.name=name;
+    public Enemy(int healthPoints, IDamageType weakness){
         this.healthPoints=healthPoints;
-        this.weakness=new ArrayList<>();
-    }
-
-    public String getName() {
-        return name;
+        this.weakness=weakness;
     }
 
     public int getHealthPoints() {
@@ -27,7 +21,14 @@ public abstract class Enemy {
         this.healthPoints = healthPoints;
     }
 
-    public ArrayList<IDamageType> getWeakness() {
+    public IDamageType getWeakness() {
         return weakness;
     }
+
+    public void takeDamage(int damage) {
+        this.healthPoints -= damage;
+    }
+
+
+
 }

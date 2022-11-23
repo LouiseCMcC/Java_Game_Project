@@ -1,9 +1,11 @@
 package characters;
 
+import weapons.Club;
 import weapons.Fork;
 import weapons.Weapon;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Dwarf extends Character{
     private Fork weapon;
@@ -19,6 +21,25 @@ public class Dwarf extends Character{
     }
 
     public void setWeapon(Fork fork) {
-        this.weapon = fork;
+        for (Fork ownFork : this.forks){
+            if(fork == ownFork){
+                this.weapon = fork;
+            }
+        }
+    }
+
+    public void addWeapon(Fork fork) {
+        this.forks.add(fork);
+    }
+
+    public ArrayList getWeapons() {
+        return this.forks;
+    }
+
+    public int getBaseDamage() {
+        if (this.weapon != null) {
+            return this.weapon.getDamage();
+        }
+        return 1;
     }
 }

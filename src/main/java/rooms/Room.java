@@ -1,6 +1,7 @@
 package rooms;
 
 import enemies.Enemy;
+import enemies.Troll;
 
 public class Room {
 
@@ -8,4 +9,8 @@ public class Room {
     private int treasure;
 
     public Room(){};
+
+    public void addEnemy(Enemy enemy) {
+        this.enemy = enemy;
+    }
 }

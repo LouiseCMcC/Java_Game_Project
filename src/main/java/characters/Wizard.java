@@ -1,9 +1,11 @@
 package characters;
 
+import magics.Curse;
 import magics.Spell;
 import mythical_creatures.MythicalCreature;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class Wizard extends Character{
     private ArrayList<Spell> spells;
@@ -21,5 +23,22 @@ public class Wizard extends Character{
 
     public void setMythicalCreature(MythicalCreature mythicalCreature) {
         this.mythicalCreature = mythicalCreature;
+    }
+
+    public void addSpell(Spell spell) {
+        this.spells.add(spell);
+    }
+
+    public ArrayList getSpells() {
+       return this.spells;
+    }
+
+    public int getBaseDamage(Spell spell) {
+        for(Spell knownSpell : this.spells){
+            if(spell == knownSpell){
+                return spell.getDamage();
+            }
+        }
+        return 0;
     }
 }

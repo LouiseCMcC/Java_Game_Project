@@ -6,10 +6,10 @@ public abstract class Character {
     private int healthPoints;
     private int treasure;
 
-    public Character(String name, int healthPoints, int treasure){
-        this.name=name;
-        this.healthPoints=healthPoints;
-        this.treasure=treasure;
+    public Character(String name, int healthPoints, int treasure) {
+        this.name = name;
+        this.healthPoints = healthPoints;
+        this.treasure = treasure;
     }
 
     public String getName() {
@@ -36,7 +36,17 @@ public abstract class Character {
         this.treasure = treasure;
     }
 
-    public void attack(){
+    public void attack() {
 
     }
+
+    public void changeHealthPoints(int points) {
+        this.healthPoints -= points;
+    }
+
+
+    public void changeTreasure(int value){
+        this.treasure += value;
+    }
 }
+
